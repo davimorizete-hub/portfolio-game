@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Game - Lápis e Baldes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">G</span>
+          <div class="brand-copy">
+            <span class="brand-tag">SYSTEM // CORE</span>
+            <h1>Portfolio Game</h1>
+          </div>
+        </div>
+        <div class="stats">
+          <span class="stat-item"><span class="stat-label">Lápis</span><strong id="lapis-quantidade">18</strong></span>
+          <span class="stat-item"><span class="stat-label">Corretos</span><strong id="lapis-corretos">0</strong></span>
+        </div>
+      </header>
+
+      <main class="game-shell">
+        <section id="gameArea" class="game-area" aria-label="Área do jogo do lápis">
+          <div id="bucketLayer" class="bucket-layer" aria-label="Baldes"></div>
+          <div id="pencilLayer" class="pencil-layer" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="winOverlay" class="win-overlay hidden" aria-live="assertive">
+      <div class="win-card">
+        <div id="gameSelectionPanel" class="game-panel">
+          <h2>Você venceu!</h2>
+          <p>Todos os lápis ficaram no balde certo. Agora escolha um jogo:</p>
+          <div class="game-buttons">
+            <button type="button" class="game-button" data-game="1">Jogo 1</button>
+            <button type="button" class="game-button" data-game="2">Jogo 2</button>
+            <button type="button" class="game-button" data-game="3">Jogo 3</button>
+          </div>
+        </div>
+
+        <div id="gameDetailPanel" class="game-panel hidden" aria-live="polite">
+          <h2 id="detailTitle">Jogo 1</h2>
+          <p id="detailDescription">Descrição do jogo.</p>
+          <div class="detail-actions">
+            <button id="enterGameButton" type="button" class="action-button primary">Entrar no jogo</button>
+            <button id="backGameButton" type="button" class="action-button secondary">Voltar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
